@@ -5,6 +5,7 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.place import Place
+import uuid
 from os import environ
 from flask import Flask, render_template
 app = Flask(__name__)
@@ -39,7 +40,7 @@ def hbnb():
                            places=places,
                            cache_id=cache_id) #Pass cache_id to the template
 
-    cache_id = str(uuid_uuid4()) # Generates a new UUID for cache_id
+    cache_id = uuid.uuid4() # Generates a new UUID for cache_id
 
 if __name__ == "__main__":
     """ Main Function """
