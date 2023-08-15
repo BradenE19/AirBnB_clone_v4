@@ -46,5 +46,17 @@ $(document).ready(function () {
     .catch(error => {
         console.error('Error:', error);
     });
+    $('button').on('click', function () {
+      $('.places > article').remove();
+      const checkedAmenities = {};
+      $.ajax({
+        url: 'http://35f944014d11.7399d2e2.hbtn-cod.io:5001/api/v1/places_search/',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify({ amenities: Object.keys(checkedAmenities) }),
+        success: function (data) {
+          displayPlaces(data);
+        }
 });
 });
