@@ -40,7 +40,7 @@ def hbnb():
                            places=places,
                            cache_id=cache_id) #Pass cache_id to the template
 
-    cache_id = uuid.uuid4() # Generates a new UUID for cache_id
+    cache_id = uuid.uuid4()
 
 if __name__ == "__main__":
     """ Main Function """
