@@ -6,11 +6,11 @@ $(document).ready(function () {
             $("div#api_status").removeClass("available");
         }
     });
-    let listAmenities = []
+    let listOfCheckedAmenities = []
     $('input').change(function() {
         const amenityName = $(this).attr("data-name");
         if (this.checked) {
-            listAmenities.push(amenityName);
+            listOfCheckedAmenities.push(amenityName);
         } else {
             listOfCheckedAmenities = listOfCheckedAmenities.filter((item) => item !== amenityName);
         }
